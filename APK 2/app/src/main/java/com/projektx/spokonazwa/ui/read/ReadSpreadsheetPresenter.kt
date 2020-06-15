@@ -55,7 +55,7 @@ class ReadSpreadsheetPresenter(private val view: ReadSpreadsheetContract.View,
     }
 
     companion object {
-        val spreadsheetId = "fooBar"
+        val spreadsheetId = "1de8AafLIonVJLzXP6gbeTMO2YgMg5JqI2hdW8nyX_6w"
         val range = "Lista"
     }
 }
