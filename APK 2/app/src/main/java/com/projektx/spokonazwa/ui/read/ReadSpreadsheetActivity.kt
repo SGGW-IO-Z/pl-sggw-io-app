@@ -85,7 +85,6 @@ class ReadSpreadsheetActivity :
         rvSpreadsheet = findViewById(R.id.rv_spreadsheet)
     }
 
-    // View related implementations
     override fun showError(error: String) {
         Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
     }

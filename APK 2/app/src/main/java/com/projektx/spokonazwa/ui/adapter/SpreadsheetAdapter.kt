@@ -27,8 +27,8 @@ class SpreadsheetAdapter(val items : MutableList<Person>) : RecyclerView.Adapter
         private val tvMajor : TextView by lazy<TextView> { itemView.findViewById(R.id.tv_major) }
 
         fun setData(person : Person) {
-            tvUser.text = person.name
-            tvMajor.text = person.major
+            tvUser.text = person.product
+            tvMajor.text = person.quantity
         }
 
     }

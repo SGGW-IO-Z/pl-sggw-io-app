@@ -14,13 +14,20 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //ustaw Layout
         setContentView(R.layout.activity_main)
+
+        //Funkcje layoutu
         btnReadSpreadsheet = findViewById(R.id.btn_read_spreadsheet)
         btnCreateSpreadsheet = findViewById(R.id.btn_create_spreadsheet)
+
+
+        //Wywołanie funkcji
         btnReadSpreadsheet.setOnClickListener {
             val readSpreadsheetIntent = Intent(this, ReadSpreadsheetActivity::class.java)
             startActivity(readSpreadsheetIntent)
         }
+
         btnCreateSpreadsheet.setOnClickListener {
             val createSpreadsheetIntent = Intent(this, CreateSpreadsheetActivity::class.java)
             startActivity(createSpreadsheetIntent)

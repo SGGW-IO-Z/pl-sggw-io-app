@@ -32,11 +32,11 @@ import java.util.*
 class CreateSpreadsheetActivity :
         BaseActivity<CreateSpreadsheetContract.Presenter>(), CreateSpreadsheetContract.View {
 
-    private lateinit var btnAdd : Button
-    private lateinit var btnUpload : Button
-    private lateinit var etName : EditText
-    private lateinit var etMajor : EditText
-    private lateinit var tvUser : TextView
+    private lateinit var btnNewItem : Button
+    private lateinit var btnFinish : Button
+    private lateinit var etProduct : EditText
+    private lateinit var etQuantity : EditText
+    private lateinit var itemList : TextView
     private lateinit var rvSpreadsheet : RecyclerView
 
     private lateinit var spreadSheetAdapter : SpreadsheetAdapter
@@ -85,21 +85,21 @@ class CreateSpreadsheetActivity :
 
     private fun bindingViews() {
         rvSpreadsheet = findViewById(R.id.rv_spreadsheet)
-        tvUser = findViewById(R.id.tv_username)
-        btnAdd = findViewById(R.id.btn_add)
-        btnUpload = findViewById(R.id.btn_upload)
-        etMajor = findViewById(R.id.et_major)
-        etName = findViewById(R.id.et_name)
-        btnAdd.setOnClickListener({
+        itemList = findViewById(R.id.tv_username)
+        btnNewItem = findViewById(R.id.btn_add)
+        btnFinish = findViewById(R.id.btn_upload)
+        etQuantity = findViewById(R.id.et_major)
+        etProduct = findViewById(R.id.et_name)
+        btnNewItem.setOnClickListener({
             addPerson()
         })
-        btnUpload.setOnClickListener({
+        btnFinish.setOnClickListener({
             presenter.uploadPeopleList()
         })
     }
 
     private fun addPerson() {
-        presenter.addPerson(etName.text.toString(), etMajor.text.toString())
+        presenter.addPerson(etProduct.text.toString(), etQuantity.text.toString())
     }
 
     // View implementation
@@ -111,9 +111,9 @@ class CreateSpreadsheetActivity :
     }
 
     override fun clearFields() {
-        etMajor.text.clear()
-        etName.text.clear()
-        etName.requestFocus()
+        etQuantity.text.clear()
+        etProduct.text.clear()
+        etProduct.requestFocus()
     }
 
     override fun showError(error: String) {
@@ -125,7 +125,7 @@ class CreateSpreadsheetActivity :
     }
 
     override fun showName(username: String) {
-        tvUser.text = username
+        itemList.text = username
     }
 
     override fun launchAuthentication(client: GoogleSignInClient) {
@@ -133,7 +133,7 @@ class CreateSpreadsheetActivity :
     }
 
     override fun showResult(id: String, url: String) {
-        Toast.makeText(this, "spreadheet created id: "+ id , Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "Raport został zapisany" , Toast.LENGTH_SHORT).show()
     }
 
     companion object {

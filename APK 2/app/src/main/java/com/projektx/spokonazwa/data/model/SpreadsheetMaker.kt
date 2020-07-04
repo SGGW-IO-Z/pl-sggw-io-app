@@ -48,7 +48,7 @@ class SpreadsheetMaker {
             val rowDataMaker = RowDataMaker()
             gridData.startRow = startRow
             gridData.startColumn = startColumn
-            people.mapTo(listRowData) { rowDataMaker.create(it.name, it.major) }
+            people.mapTo(listRowData) { rowDataMaker.create(it.product, it.quantity) }
             gridData.rowData = listRowData
             return gridData
         }

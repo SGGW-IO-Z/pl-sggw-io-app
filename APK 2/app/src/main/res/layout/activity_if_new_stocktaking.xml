@@ -12,8 +12,7 @@
         android:text="Czy wykonać nową inwentaryzację?"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="222dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="222dp" />
 
     <Button
         android:id="@+id/stocktaking_yes"
@@ -32,6 +31,5 @@
         android:layout_height="wrap_content"
         android:text="Nie"
         tools:layout_editor_absoluteX="262dp"
-        tools:layout_editor_absoluteY="342dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="342dp" />
 </android.support.constraint.ConstraintLayout>

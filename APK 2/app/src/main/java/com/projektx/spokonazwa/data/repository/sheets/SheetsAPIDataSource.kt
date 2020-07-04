@@ -36,7 +36,7 @@ class SheetsAPIDataSource(private val authManager : AuthenticationManager,
                             .execute()
                     response.getValues() }
                 .flatMapIterable { it -> it }
-                .map { Person(it[0].toString(), it[4].toString()) }
+                .map { Person(it[1].toString(), it[5].toString()) }
                 .toList()
     }
 

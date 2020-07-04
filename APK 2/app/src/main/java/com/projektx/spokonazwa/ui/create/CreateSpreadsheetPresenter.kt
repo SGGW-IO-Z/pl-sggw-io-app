@@ -38,8 +38,8 @@ class CreateSpreadsheetPresenter(private val view: CreateSpreadsheetContract.Vie
             val spreadsheetMaker = SpreadsheetMaker()
             val spreadsheet: Spreadsheet =
                     spreadsheetMaker
-                            .create("Prztklad skoroszytu",
-                                    "Arkusz1",
+                            .create("Gotowy Raport",
+                                    "Raport",
                                     peopleList)
 
             disposable = sheetsRepository
